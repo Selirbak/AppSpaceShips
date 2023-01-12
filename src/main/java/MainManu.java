@@ -14,14 +14,13 @@ public class MainManu {
         for (int i = 0; i < getMenu().size(); i++) {
             Utilities.showMessaje(getMenu().get(i));
         }
-        int option = 0;
+        int option;
         do {
             option = getOption();
         } while (option < 0);
         Utilities.showMessaje("La opcion que elegiste es :" + option);
 
     }
-
     private int getOption() {
         Scanner scanner;
         int option = -1;
@@ -41,7 +40,6 @@ public class MainManu {
         } while (esPossibleContinue);
         return option;
     }
-
     private List<String> getMenu() {
         List<String> menu = new ArrayList<>();
         menu.add(Dictionary.Message.Information.OPCION_ONE);
