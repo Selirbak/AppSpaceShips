@@ -2,13 +2,10 @@ import actions.Create;
 import actions.Find;
 import actions.Show;
 import controller.Dictionary;
+import controller.ImplementMenu;
 import controller.Utilities;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-public class MainManu {
+public class MainManu extends ImplementMenu {
 
 
     public void start() {
@@ -19,9 +16,9 @@ public class MainManu {
         }
         int option;
         do {
-            option = getOption();
+            option = getOption(getMenu());
         } while (option < 0);
-        Utilities.showMessaje("La opcion que elegiste es :" + getMenu().get(option-1));
+        Utilities.showMessaje("La opcion que elegiste es :" + getMenu().get(option - 1));
         switch (option) {
             case 1:
                 Create create = new Create();
@@ -32,38 +29,11 @@ public class MainManu {
                 break;
             case 3:
                 Find find = new Find();
+                find.findTo();
                 break;
         }
 
 
-    }
-
-    private int getOption() {
-        Scanner scanner;
-        int option = -1;
-        boolean esPossibleContinue;
-        Utilities.showMessaje(Dictionary.Message.Information.GET_OPTION);
-        do {
-            try {
-                scanner = new Scanner(System.in);
-                option = scanner.nextInt();
-            } catch (Exception e) {
-                Utilities.showMessajeFail(Dictionary.Message.Error.OPTION_INCORRECT);
-            }
-            esPossibleContinue = option > getMenu().size() || option <= 0;
-            if (esPossibleContinue) {
-                Utilities.showMessajeFail(Dictionary.Message.Error.OPTION_NOT_FOUND);
-            }
-        } while (esPossibleContinue);
-        return option;
-    }
-
-    private List<String> getMenu() {
-        List<String> menu = new ArrayList<>();
-        menu.add(Dictionary.Message.Information.OPCION_ONE);
-        menu.add(Dictionary.Message.Information.OPCION_TWO);
-        menu.add(Dictionary.Message.Information.OPCION_THREE);
-        return menu;
     }
 
 

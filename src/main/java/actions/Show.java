@@ -25,8 +25,6 @@ public class Show {
             printInventory("COMBUSTIBLE", filter.toFueld());
             printInventory("ORIGEN", filter.toOrigin());
             printInventory("ESTADO DE NAVES", filter.toIsActive(), true);
-
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
