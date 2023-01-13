@@ -1,4 +1,4 @@
 package actions;
 
-public class find {
+public class Find {
 }

@@ -1,3 +1,6 @@
+import actions.Create;
+import actions.Find;
+import actions.Show;
 import controller.Dictionary;
 import controller.Utilities;
 
@@ -18,9 +21,21 @@ public class MainManu {
         do {
             option = getOption();
         } while (option < 0);
+        switch (option) {
+            case 1:
+                Create create = new Create();
+                break;
+            case 2:
+                Show show = new Show();
+                break;
+            case 3:
+                Find find = new Find();
+                break;
+        }
         Utilities.showMessaje("La opcion que elegiste es :" + option);
 
     }
+
     private int getOption() {
         Scanner scanner;
         int option = -1;
@@ -40,6 +55,7 @@ public class MainManu {
         } while (esPossibleContinue);
         return option;
     }
+
     private List<String> getMenu() {
         List<String> menu = new ArrayList<>();
         menu.add(Dictionary.Message.Information.OPCION_ONE);
