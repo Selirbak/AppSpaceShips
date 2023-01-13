@@ -21,18 +21,20 @@ public class MainManu {
         do {
             option = getOption();
         } while (option < 0);
+        Utilities.showMessaje("La opcion que elegiste es :" + getMenu().get(option-1));
         switch (option) {
             case 1:
                 Create create = new Create();
                 break;
             case 2:
                 Show show = new Show();
+                show.init();
                 break;
             case 3:
                 Find find = new Find();
                 break;
         }
-        Utilities.showMessaje("La opcion que elegiste es :" + option);
+
 
     }
 

@@ -11,7 +11,7 @@ public class SpaceShip {
     private LoadType loadType;
     private boolean useFuel = false;
 
-    public SpaceShip(String id, String name, boolean isActiva, String fuelType, String origin, String typeShip, String power, LoadType loadType) {
+    public SpaceShip(String id, String name, boolean isActiva, boolean useFuel, String fuelType, String origin, String typeShip, String power, LoadType loadType) {
         this.id = id;
         this.name = name;
         this.isActiva = isActiva;
@@ -20,7 +20,7 @@ public class SpaceShip {
         this.typeShip = typeShip;
         this.power = power;
         this.loadType = loadType;
-        this.useFuel = true;
+        this.useFuel = useFuel;
     }
 
     public SpaceShip(String id, String name, boolean isActiva, String origin, String typeShip, String power, LoadType loadType) {
