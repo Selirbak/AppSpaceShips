@@ -8,11 +8,12 @@ public abstract class Dictionary {
             public static final String OPCION_ONE = "1.Crear Nueva Nave Espacial";
             public static final String OPCION_TWO = "2.Mostrar naves disponibles";
             public static final String OPCION_THREE = "3.Buscar";
-
             public static final String GET_OPTION = "Ingrese la opción que necesitas";
             public static final String OPTION_DEFAULT = "SI O NO";
-
             public static final String EXISTEN = "Existen : ";
+            public static final String SEPARADOR = "----------------------------------------------";
+            public static final String ELEGISTE_OPCION = "****Elegiste la Opcion:|| %s || *******";
+
         }
 
         public class Error {

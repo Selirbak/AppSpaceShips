@@ -1,6 +1,7 @@
 package actions;
 
 import controller.Collect.FindTo;
+import controller.Dictionary;
 import controller.Utilities;
 import controller.database.Manager;
 import objects.SpaceShip;
@@ -13,8 +14,6 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Show {
-
-
     public void init() {
         FindTo filter = new FindTo();
         try {
@@ -30,17 +29,15 @@ public class Show {
         }
 
     }
-
     private void printInventory(String title, Map<String, List<SpaceShip>> type) {
-        Utilities.showMessaje("----------------------------------------------");
+        Utilities.showMessaje(Dictionary.Message.Information.SEPARADOR);
         Utilities.showMessaje(title);
         for (Map.Entry<String, List<SpaceShip>> entry : type.entrySet()) {
             Utilities.showMessaje(entry.getKey() + " : " + entry.getValue().size());
         }
     }
-
     private void printInventory(String title, Map<Boolean, List<SpaceShip>> type, boolean isActive) {
-        Utilities.showMessaje("----------------------------------------------");
+        Utilities.showMessaje(Dictionary.Message.Information.SEPARADOR);
         Utilities.showMessaje(title);
         for (Map.Entry<Boolean, List<SpaceShip>> entry : type.entrySet()) {
             if (isActive) {

@@ -1,5 +1,6 @@
 package controller;
 
+import controller.Collect.FindTo;
 import controller.Dictionary;
 import controller.Utilities;
 
@@ -25,6 +26,14 @@ public class ImplementMenu {
                 Utilities.showMessajeFail(Dictionary.Message.Error.OPTION_NOT_FOUND);
             }
         } while (esPossibleContinue);
+        return option;
+    }
+
+    public int getSelectionOption(List<String> menu) {
+        int option;
+        do {
+            option = getOption(menu);
+        } while (option < 0);
         return option;
     }
 
