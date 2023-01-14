@@ -1,5 +1,6 @@
 import actions.Create;
 import actions.Find;
+import actions.Reset;
 import actions.Show;
 import controller.Dictionary;
 import controller.ImplementMenu;
@@ -20,19 +21,28 @@ public class MainManu extends ImplementMenu {
         int option = getSelectionOption(mainMenu);
         Utilities.showMessaje(String.format(ELEGISTE_OPCION, mainMenu.get(option - 1)));
         switch (option) {
-            case 1:
+            case 1 -> {
                 Create create = new Create();
                 create.init();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 Show show = new Show();
                 show.init();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 Find find = new Find();
                 find.init();
-                break;
+            }
+            case 4 -> {
+                Reset reset = new Reset();
+                reset.init();
+            }
         }
+        if(option!=5){
+            start();
+        }
+
+
 
 
     }

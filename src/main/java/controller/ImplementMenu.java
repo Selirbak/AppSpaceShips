@@ -43,6 +43,8 @@ public class ImplementMenu {
         menu.add(Dictionary.Message.Information.OPCION_ONE);
         menu.add(Dictionary.Message.Information.OPCION_TWO);
         menu.add(Dictionary.Message.Information.OPCION_THREE);
+        menu.add(Dictionary.Message.Information.OPCION_FOUR);
+        menu.add(Dictionary.Message.Information.OPCION_FIVE);
         return menu;
     }
 

@@ -23,8 +23,6 @@ public class Create extends ImplementMenu {
     public void init() {
         Utilities.showMessaje(Dictionary.Message.Information.WELCOME_CREATE);
         createNewShip();
-
-        // Manager.insertData();
     }
 
     private List<String> typesShips() {
@@ -60,7 +58,6 @@ public class Create extends ImplementMenu {
                     }
                     continuee = false;
                 }
-
             }
         } while (continuee ^ (quantity < 2 ^ listMap.size() >= 2));
 
@@ -121,10 +118,8 @@ public class Create extends ImplementMenu {
                             }
                             field.set(spaceShip, value);
                         }
-
                     }
                 }
-
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }

@@ -12,15 +12,22 @@ public class Manager extends ConnectionDB {
         consultAll();
         return shipList;
     }
-    public static Map<Integer, String> typeShips(){
-       return consultTypeShip();
+
+    public static Map<Integer, String> typeShips() {
+        return consultTypeShip();
     }
-    public static int quantityRegister(){
+
+    public static int quantityRegister() {
         return consultRegister();
     }
+
     public static void insertData(List<SpaceShip> spaceShips) {
         for (SpaceShip spaceShip : spaceShips) {
             insert(spaceShip);
         }
+    }
+
+    public static void reset_Table() {
+        resetTable();
     }
 }

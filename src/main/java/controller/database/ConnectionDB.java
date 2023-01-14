@@ -84,4 +84,15 @@ public class ConnectionDB {
             throw new IllegalStateException("No se pudo conectar ala base de datosa", e);
         }
     }
+
+
+    static void resetTable() {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
+             PreparedStatement statement = connection.prepareStatement(controller.Dictionary.Consultas.RESET_ALL_TABLE)) {
+            statement.execute();
+        } catch (SQLException e) {
+            throw new IllegalStateException("No se pudo conectar ala base de datosa", e);
+        }
+
+    }
 }
