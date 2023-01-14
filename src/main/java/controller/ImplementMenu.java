@@ -13,9 +13,9 @@ public class ImplementMenu {
         Scanner scanner;
         int option = -1;
         boolean esPossibleContinue;
-        Utilities.showMessaje(Dictionary.Message.Information.GET_OPTION);
         do {
             try {
+                Utilities.showMessajeInsert(Dictionary.Message.Information.GET_OPTION);
                 scanner = new Scanner(System.in);
                 option = scanner.nextInt();
             } catch (Exception e) {
@@ -25,6 +25,7 @@ public class ImplementMenu {
             if (esPossibleContinue) {
                 Utilities.showMessajeFail(Dictionary.Message.Error.OPTION_NOT_FOUND);
             }
+            Utilities.showMessaje(Dictionary.Message.Information.SEPARADOR);
         } while (esPossibleContinue);
         return option;
     }

@@ -113,7 +113,7 @@ public class Find extends ImplementMenu {
         do {
             option = getOption(possibleOption);
         } while (option < 0);
-        Utilities.showMessaje("Elegiste :" + possibleOption.get(option - 1));
+        Utilities.showMessaje(ELEGISTE_OPCION + possibleOption.get(option - 1));
         return option;
     }
 
@@ -127,14 +127,14 @@ public class Find extends ImplementMenu {
                     if (name.equals("loadType")) {
                         for (Field fieldAux : spaceShip.getLoadType().getClass().getDeclaredFields()) {
                             fieldAux.setAccessible(true);
-                            Utilities.showMessaje(fieldAux.getName() + " : " + (fieldAux.get(spaceShip.getLoadType()).equals(true) ? "SI" : "NO"));
+                            Utilities.showMessaje(Utilities.getTitle(fieldAux.getName(), Dictionary.DetailsShips.value()) + (fieldAux.get(spaceShip.getLoadType()).equals(true) ? "SI" : "NO"));
 
                         }
 
                     } else {
                         Object valor = field.get(spaceShip);
                         valor = valor == null ? "" : valor;
-                        Utilities.showMessaje(name + " : " + valor);
+                        Utilities.showMessaje(Utilities.getTitle(name, Dictionary.DetailsShips.value()) + valor);
                     }
 
                 } catch (IllegalAccessException e) {

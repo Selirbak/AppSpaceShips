@@ -1,9 +1,9 @@
 package objects;
 
 public class LoadType {
-    private boolean isPeople;
-    private boolean isSupplies;
-    private boolean isEquipment;
+    public boolean isPeople;
+    public boolean isSupplies;
+    public boolean isEquipment;
 
     public LoadType(boolean isPeople, boolean isSupplies, boolean isEquipment) {
         this.isPeople = isPeople;

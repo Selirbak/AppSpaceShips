@@ -1,15 +1,19 @@
 package objects;
 
 public class SpaceShip {
-    private final String id;
-    private final String name;
-    private final boolean isActiva;
+    private String id;
+    private String name;
+    private boolean isActiva;
+    private boolean useFuel;
     private String fuelType;
-    private final String origin;
-    private final String typeShip;
-    private final String power;
+    private String origin;
+    private String typeShip;
+    private String power;
     private LoadType loadType;
-    private boolean useFuel = false;
+
+
+    public SpaceShip() {
+    }
 
     public SpaceShip(String id, String name, boolean isActiva, boolean useFuel, String fuelType, String origin, String typeShip, String power, LoadType loadType) {
         this.id = id;
@@ -72,6 +76,10 @@ public class SpaceShip {
 
     public LoadType getLoadType() {
         return loadType;
+    }
+
+    public void setLoadType(LoadType loadType) {
+        this.loadType = loadType;
     }
 
     public boolean isUseFuel() {

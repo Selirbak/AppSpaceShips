@@ -22,6 +22,7 @@ public class MainManu extends ImplementMenu {
         switch (option) {
             case 1:
                 Create create = new Create();
+                create.init();
                 break;
             case 2:
                 Show show = new Show();

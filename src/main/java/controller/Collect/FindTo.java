@@ -16,6 +16,12 @@ public class FindTo extends ConnectionDB implements Grouping {
                 .collect(Collectors.groupingBy(SpaceShip::getTypeShip));
     }
 
+    public Map<String, List<SpaceShip>> toTypeShip(List<SpaceShip> shipList) {
+        return shipList
+                .stream()
+                .collect(Collectors.groupingBy(SpaceShip::getTypeShip));
+    }
+
     @Override
     public Map<String, List<SpaceShip>> toOrigin() {
         return shipList
@@ -45,7 +51,6 @@ public class FindTo extends ConnectionDB implements Grouping {
                 .stream()
                 .collect(Collectors.groupingBy(SpaceShip::isUseFuel));
     }
-
 
 
 }
