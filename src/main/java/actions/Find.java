@@ -20,13 +20,18 @@ public class Find extends ImplementMenu {
 
     public void init() {
         try {
-            Manager.getAllShips();
-            List<String> menu = getMenuFilter();
-            Utilities.printMenu(menu);
-            int option = getSelectionOption(menu);
-            Utilities.showMessaje(String.format(ELEGISTE_OPCION, menu.get(option - 1)));
-            Utilities.showMessaje("****Estas son las posibles opciones a Filtrar");
-            findTo(option);
+            if (Manager.quantityRegister() == 0) {
+                Utilities.showMessajeFail("****No tienes registros de naves a filtrar");
+            } else {
+                Manager.getAllShips();
+                Utilities.showMessaje("****Estas son las posibles opciones a Filtrar");
+                List<String> menu = getMenuFilter();
+                Utilities.printMenu(menu);
+                int option = getSelectionOption(menu);
+                Utilities.showMessaje(String.format(ELEGISTE_OPCION, menu.get(option - 1)));
+                findTo(option);
+            }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
