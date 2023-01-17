@@ -47,8 +47,8 @@ public class Create extends ImplementMenu {
             continuee = isBoolean("SI", "NO");
             listMap = find.toTypeShip(listShip);
 
-            if (quantity < 2) {
-                if (listMap.size() < 2) {
+            if (quantity < 4) {
+                if (listMap.size() < 4) {
                     if (!continuee) {
                         Utilities.showMessaje("RECUERDA QUE PARA INICIAR DEBES INGRESAR AL MENOS 4 NAVES DE TIPOS DIFERENTES");
                         Utilities.showMessaje("POR EL MOMENTO SOLO HAS INGRESADO");
@@ -59,7 +59,7 @@ public class Create extends ImplementMenu {
                     continuee = false;
                 }
             }
-        } while (continuee ^ (quantity < 2 ^ listMap.size() >= 2));
+        } while (continuee ^ (quantity < 4 ^ listMap.size() >= 4));
 
         Manager.insertData(listShip);
     }

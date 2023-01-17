@@ -10,7 +10,6 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'net.sf.ucanaccess', name: 'ucanaccess', version: '5.0.1'
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.31'
 
 
